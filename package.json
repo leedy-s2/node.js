@@ -14,7 +14,7 @@
     "supertest": "^6.1.3"
   },
   "scripts": {
-    "test": "mocha first.spec.js",
+    "test": "mocha api/user/user.spec.js",
     "start": "node first.js"
   },
   "author": "",
