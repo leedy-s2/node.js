@@ -1,0 +1,21 @@
+<div class="board">
+  <button onclick="next()" class="block-button">다음</button>
+</div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+  var index = 0;
+
+  function next() {
+    $.ajax({
+      url: "myname.php",
+      type: "get",
+      data: {
+        index: index++
+      }
+    }).done(function(data) {
+      data = JSON.parse(data);
+      $('#result').text('저의' + data.desc + '은 ' + data.name + '입니다!');
+      if (index > 2) index = 0;
+    });
+  }
+</script>
